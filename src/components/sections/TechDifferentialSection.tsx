@@ -14,38 +14,38 @@ import { Badge } from "@/components/ui/badge";
 const pillars = [
   {
     icon: ShieldCheck,
-    title: "Arquitetura Limpa",
-    desc: "SOLID, DDD e Clean Architecture como base. Código que evolui sem acumular dívida técnica.",
+    title: "Tecnologia Escalável",
+    desc: "Sistemas que acompanham o crescimento da sua empresa sem precisar de refação. O seu investimento está protegido e pronto para o futuro.",
     color: "blue",
   },
   {
     icon: Lock,
-    title: "Segurança por Design",
-    desc: "Autenticação JWT/OAuth 2.0, criptografia em repouso e em trânsito, OWASP Top 10 mitigado.",
+    title: "Segurança e Conformidade",
+    desc: "Proteção absoluta de dados e total conformidade com a LGPD. Blinde a reputação da sua empresa contra riscos e vazamentos.",
     color: "violet",
   },
   {
     icon: GitBranch,
-    title: "APIs Robustas",
-    desc: "REST e GraphQL versionadas, documentação OpenAPI, rate limiting e circuit breakers nativos.",
+    title: "Conexão e Automação",
+    desc: "Conectamos sua IA com WhatsApp, CRMs e bancos de dados. Automatize tarefas manuais, reduza custos operacionais e venda no piloto automático.",
     color: "cyan",
   },
   {
     icon: ServerCog,
-    title: "Infraestrutura Cloud",
-    desc: "IaC com Terraform, CI/CD automatizado, auto-scaling e monitoramento 24/7 com alertas.",
+    title: "Estabilidade Garantida",
+    desc: "Sistemas robustos operando 24/7. Sua empresa sempre de portas abertas para vender e atender, sem quedas ou interrupções.",
     color: "blue",
   },
   {
     icon: TestTube,
-    title: "Testes & Qualidade",
-    desc: "Cobertura 80%+ com unit, integration e e2e tests. Pipelines que garantem zero regressão.",
+    title: "Software de Alta Confiança",
+    desc: "Código testado e validado para garantir zero dor de cabeça. Entregamos uma experiência perfeita que retém e fideliza seus usuários.",
     color: "violet",
   },
   {
     icon: Zap,
-    title: "Performance Obsessiva",
-    desc: "Otimizações de banco, caching inteligente com Redis e Web Vitals como KPIs de produto.",
+    title: "Velocidade que Vende",
+    desc: "Aplicações ultrarrápidas com carregamento instantâneo. Cada segundo a menos na tela de loading é mais conversão no seu caixa.",
     color: "cyan",
   },
 ];
@@ -88,13 +88,13 @@ export function TechDifferentialSection() {
             Diferencial Técnico
           </Badge>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
-            Engenharia de Software{" "}
-            <span className="text-gradient">de verdade.</span>
+            Tecnologia que{" "}
+            <span className="text-gradient">gera resultados.</span>
           </h2>
           <p className="text-white/40 text-lg leading-relaxed">
-            Não vendemos horas. Vendemos responsabilidade técnica. Cada linha de código
-            segue princípios que garantem que seu sistema rode em produção com confiança —
-            hoje e daqui a 5 anos.
+            Não vendemos tecnologia, vendemos crescimento. Nossas soluções são
+            construídas para garantir que sua empresa opere com máxima
+            eficiência, segurança e escala, hoje e no futuro.
           </p>
         </motion.div>
 
