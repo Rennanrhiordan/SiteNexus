@@ -10,7 +10,6 @@ import {
   BarChart3,
   Palette,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 const services = [
   {
@@ -19,15 +18,15 @@ const services = [
     badge: "IA & Automação",
     title: "Agentes de IA & Automação Inteligente",
     description:
-      "Agentes conversacionais com suporte humanizado 24/7, fluxos de automação complexos e integração com qualquer API ou sistema legado da sua empresa.",
+      "Agentes que atendem, vendem e resolvem problemas de forma autônoma 24/7. Reduza custos operacionais e aumente a satisfação do cliente com uma operação que nunca dorme.",
     features: [
-      { icon: Webhook, text: "Integração via REST, GraphQL & Webhooks" },
-      { icon: Bot, text: "Agentes com memória e raciocínio contextual" },
+      { icon: Webhook, text: "Integração direta com suas ferramentas atuais (CRM/WhatsApp)" },
+      { icon: Bot, text: "Atendimento humanizado com memória e contexto" },
     ],
     gradient: "from-blue-600/20 to-blue-900/5",
     borderHover: "hover:border-blue-500/30",
     glow: "group-hover:shadow-blue-900/30",
-    tags: ["LLMs", "RAG", "OpenAI", "Langchain"],
+    tags: ["Atendimento 24/7", "Economia de Escala", "Crescimento de Leads"],
   },
   {
     icon: Globe,
@@ -35,15 +34,15 @@ const services = [
     badge: "Web & Sistemas",
     title: "Sistemas Web & Software Sob Medida",
     description:
-      "Plataformas SaaS, ERPs e dashboards analíticos construídos com arquitetura limpa, focados em escalabilidade horizontal e zero downtime.",
+      "Plataformas sob medida para gerenciar e escalar a sua empresa. Transformamos processos complexos em fluxos simples, com total segurança e estabilidade para a sua operação.",
     features: [
-      { icon: BarChart3, text: "Dashboards em tempo real com WebSockets" },
-      { icon: Globe, text: "Arquitetura microservices e cloud-native" },
+      { icon: BarChart3, text: "Acompanhamento de dados em tempo real para tomada de decisão" },
+      { icon: Globe, text: "Arquitetura preparada para suportar grande volume de acessos" },
     ],
     gradient: "from-violet-600/20 to-violet-900/5",
     borderHover: "hover:border-violet-500/30",
     glow: "group-hover:shadow-violet-900/30",
-    tags: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
+    tags: ["Gestão Inteligente", "Segurança LGPD", "Sistemas Escaláveis"],
   },
   {
     icon: Smartphone,
@@ -51,15 +50,15 @@ const services = [
     badge: "Mobile",
     title: "Aplicativos Mobile iOS & Android",
     description:
-      "Apps nativos e cross-platform com UX/UI premium, performance nativa e integrações com sensores, câmera, GPS e serviços em nuvem.",
+      "Coloque sua empresa no bolso do seu cliente. Aplicativos de alta performance focados em criar um canal direto de vendas e reter usuários com uma experiência premium. Além de poder trazer organização e eficiencia para sua empresa com aplicativos internos personalizados.",
     features: [
-      { icon: Palette, text: "Design System exclusivo e UX pesquisado" },
-      { icon: Smartphone, text: "Animações 60fps com Reanimated 3" },
+      { icon: Palette, text: "Design focado na melhor experiência e conversão do usuário" },
+      { icon: Smartphone, text: "Experiência fluida e rápida em qualquer dispositivo" },
     ],
     gradient: "from-cyan-600/20 to-cyan-900/5",
     borderHover: "hover:border-cyan-500/30",
     glow: "group-hover:shadow-cyan-900/30",
-    tags: ["React Native", "Expo", "Swift", "Kotlin"],
+    tags: ["Presença Digital", "Notificações Push", "Alta Retenção"],
   },
 ];
 
@@ -109,9 +108,6 @@ export function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <Badge variant="violet" className="mb-5">
-            O que entregamos
-          </Badge>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-5 tracking-tight">
             Serviços de{" "}
             <span className="text-gradient">alto impacto</span>

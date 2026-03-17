@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bot, User, Send, Sparkles, ChevronRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 const demoConversation = [
   {
@@ -48,11 +47,15 @@ export function AIConciergeSection() {
   const [isTyping, setIsTyping] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [hasStarted, setHasStarted] = useState(false);
-  const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (chatEndRef.current) {
-      chatEndRef.current.scrollIntoView({ behavior: "smooth" });
+    if (chatContainerRef.current) {
+      // Rola apenas dentro da caixa do chat, sem afetar a página inteira
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: "smooth",
+      });
     }
   }, [visibleMessages, isTyping]);
 
@@ -89,9 +92,6 @@ export function AIConciergeSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <Badge variant="violet" className="mb-5">
-              IA Concierge
-            </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
               Seus agentes de IA{" "}
               <span className="text-gradient">trabalhando enquanto você dorme.</span>
@@ -104,10 +104,10 @@ export function AIConciergeSection() {
 
             <div className="space-y-4 mb-8">
               {[
-                "Memória conversacional de longo prazo",
-                "Handoff inteligente para time humano",
-                "Analytics de conversas e insights automáticos",
-                "Deploy em WhatsApp, Webchat, Slack ou Telegram",
+                "IA que reconhece e lembra de cada cliente: Sua empresa oferece um atendimento personalizado, lembrando do histórico e das preferências de cada cliente automaticamente.",
+                "Transição suave para seus atendentes: A IA resolve as dúvidas comuns e transfere para seus especialistas apenas quando necessário, com todo o contexto da conversa.",
+                "Relatórios estratégicos do seu negócio: Descubra exatamente o que seus clientes mais pedem e identifique oportunidades de venda com relatórios automáticos de inteligência.",
+                "Sua empresa onde o cliente estiver: Atendimento unificado e profissional nos canais que seus clientes mais usam, garantindo que você nunca perca um lead.",
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -115,10 +115,10 @@ export function AIConciergeSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 + 0.3 }}
-                  className="flex items-center gap-3"
+                  className="flex items-start gap-3"
                 >
-                  <ChevronRight size={14} className="text-blue-400 shrink-0" />
-                  <span className="text-white/60 text-sm">{item}</span>
+                  <ChevronRight size={14} className="text-blue-400 shrink-0 mt-0.5" />
+                  <span className="text-white/60 text-sm leading-relaxed">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -167,7 +167,7 @@ export function AIConciergeSection() {
               </div>
 
               {/* Messages */}
-              <div className="p-5 h-[360px] overflow-y-auto scrollbar-thin space-y-4 flex flex-col">
+              <div ref={chatContainerRef} className="p-5 h-[360px] overflow-y-auto scrollbar-thin space-y-4 flex flex-col">
                 <AnimatePresence>
                   {demoConversation.slice(0, visibleMessages).map((msg, i) => (
                     <motion.div
@@ -232,7 +232,6 @@ export function AIConciergeSection() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-                <div ref={chatEndRef} />
               </div>
 
               {/* Quick actions */}

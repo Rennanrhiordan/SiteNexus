@@ -4,13 +4,6 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Cpu, Code2, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-
-const floatingStats = [
-  { value: "98%", label: "Uptime SLA" },
-  { value: "3x", label: "ROI médio" },
-  { value: "40+", label: "Projetos" },
-];
 
 export function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -108,7 +101,7 @@ export function HeroSection() {
       <div className="absolute top-40 left-1/3 w-[300px] h-[300px] bg-violet-600/8 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center pt-24 pb-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center pt-24 pb-32">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -116,10 +109,6 @@ export function HeroSection() {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-8"
         >
-          <Badge variant="blue" className="gap-2 text-xs py-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-            Engenharia de Software de Nível Enterprise
-          </Badge>
         </motion.div>
 
         {/* Headline */}
@@ -172,39 +161,37 @@ export function HeroSection() {
           </Button>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-wrap justify-center gap-8 md:gap-16"
-        >
-          {floatingStats.map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="text-3xl font-bold text-gradient-blue">{stat.value}</div>
-              <div className="text-sm text-white/40 mt-1">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
-
         {/* Tech icons row */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-16 flex justify-center gap-6 text-white/20"
+          className="mt-16 flex flex-col md:flex-row justify-center items-center md:items-stretch gap-6 text-white/20"
         >
           {[
-            { icon: Cpu, label: "IA & ML" },
-            { icon: Code2, label: "Backend" },
-            { icon: Layers, label: "Full Stack" },
-          ].map(({ icon: Icon, label }, i) => (
+            { 
+              icon: Cpu, 
+              label: "Atendimento 24/7 Inteligente",
+              desc: "Agentes de IA humanizados que resolvem dúvidas, vendem e dão suporte sem filas, via WhatsApp e Web." 
+            },
+            { 
+              icon: Code2, 
+              label: "Processos Automatizados",
+              desc: "Elimine tarefas manuais repetitivas e erros humanos. Criamos automações que conectam seus sistemas atuais." 
+            },
+            { 
+              icon: Layers, 
+              label: "Sistemas Sob Medida",
+              desc: "Do design à engenharia, desenvolvemos plataformas completas, CRMs e ERPs focados na escala do seu negócio." 
+            },
+          ].map(({ icon: Icon, label, desc }, i) => (
             <div
               key={i}
-              className="flex flex-col items-center gap-2 px-6 py-4 rounded-xl border border-white/5 bg-white/2 hover:border-blue-500/20 hover:text-white/40 transition-all duration-300"
+              className="flex flex-col items-center text-center gap-3 px-6 py-5 rounded-xl border border-white/5 bg-white/2 hover:border-blue-500/20 transition-all duration-300 max-w-[280px] group"
             >
-              <Icon size={20} />
-              <span className="text-xs font-medium">{label}</span>
+              <Icon size={24} className="group-hover:text-blue-400 transition-colors" />
+              <span className="text-sm font-semibold text-white/80 group-hover:text-white transition-colors">{label}</span>
+              <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors leading-relaxed">{desc}</span>
             </div>
           ))}
         </motion.div>
@@ -215,7 +202,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20"
       >
         <span className="text-xs tracking-widest uppercase">Explorar</span>
         <motion.div

@@ -9,7 +9,6 @@ import {
   ServerCog,
   TestTube,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 const pillars = [
   {
@@ -84,9 +83,6 @@ export function TechDifferentialSection() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-20"
         >
-          <Badge variant="blue" className="mb-5">
-            Diferencial Técnico
-          </Badge>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
             Tecnologia que{" "}
             <span className="text-gradient">gera resultados.</span>

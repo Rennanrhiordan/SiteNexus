@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, MessageCircle, CheckCircle } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 export function CTASection() {
   const [submitted, setSubmitted] = useState(false);
@@ -32,9 +31,6 @@ export function CTASection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <Badge variant="blue" className="mb-5">
-            Consultoria Gratuita
-          </Badge>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
             Pronto para escalar com{" "}
             <span className="text-gradient">engenharia real?</span>
@@ -83,23 +79,7 @@ export function CTASection() {
             ))}
 
             {/* Social proof */}
-            <div className="pt-4 border-t border-white/5">
-              <div className="text-white/25 text-xs mb-3 uppercase tracking-widest">
-                Tecnologias
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {["Next.js", "Python", "Node.js", "React Native", "GPT-4o", "AWS", "Docker", "PostgreSQL"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs px-2 py-1 rounded bg-white/4 text-white/40 font-mono border border-white/5"
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
+
           </motion.div>
 
           {/* Right: form */}
@@ -125,7 +105,7 @@ export function CTASection() {
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="João Silva"
-                      className="w-full bg-white/4 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/25 border border-white/8 focus:outline-none focus:border-blue-500/40 transition-colors"
+                      className="w-full bg-white/4 rounded-xl px-4 py-3 text-sm text-gray-400 placeholder:text-gray-500 border border-white/8 focus:outline-none focus:border-blue-500/40 transition-colors"
                     />
                   </div>
                   <div>
@@ -138,7 +118,7 @@ export function CTASection() {
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="joao@empresa.com.br"
-                      className="w-full bg-white/4 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/25 border border-white/8 focus:outline-none focus:border-blue-500/40 transition-colors"
+                      className="w-full bg-white/4 rounded-xl px-4 py-3 text-sm text-gray-400 placeholder:text-gray-500 border border-white/8 focus:outline-none focus:border-blue-500/40 transition-colors"
                     />
                   </div>
                   <div>
@@ -151,12 +131,12 @@ export function CTASection() {
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       placeholder="Descreva brevemente o que você precisa construir ou resolver..."
-                      className="w-full bg-white/4 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/25 border border-white/8 focus:outline-none focus:border-blue-500/40 transition-colors resize-none"
+                      className="w-full bg-white/4 rounded-xl px-4 py-3 text-sm text-gray-400 placeholder:text-gray-500 border border-white/8 focus:outline-none focus:border-blue-500/40 transition-colors resize-none"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full h-13 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white font-semibold rounded-xl transition-all duration-200 group shadow-lg shadow-violet-900/20"
+                    className="w-full py-4 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white font-semibold rounded-xl transition-all duration-200 group shadow-lg shadow-violet-900/20"
                   >
                     Agendar Consultoria Gratuita
                     <ArrowRight
